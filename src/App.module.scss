@@ -6,7 +6,7 @@
 }
 
 .form {
-  @apply text-black;
+  @apply text-black bg-white;
 
   .inputItem_group {
     @apply grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-2 gap-y-6 sm:gap-4 mb-[25px] sm:mb-[19.5px];
@@ -49,20 +49,37 @@
     @apply items-center flex items-center;
   }
 
+
+.regionTitle_wrapper {
+  @apply flex;
+}
+  
   //Group for region radiobuttons
   .regionGroup {
-    @apply mt-6 sm:mt-[19.5px]
-           ;
+    @apply mt-6 sm:mt-[19.5px];
   }
 
+  // .regionInfoBtn {
+  //   @apply group block ;
+  // }
 
   //Helping message
-  .regionsInfo {
-    @apply py-4 px-6 rounded-[8px] shadow-3xl
-    after:block after:content-[''] after:w-4 after:h-4 after:bg-black z-10;
+  .regionsInfoMassage {
+    @apply py-4 px-6 rounded-[8px] shadow-3xl relative
+    after:block after:content-[''] after:w-4 after:h-4 after:bg-white 
+          after:rotate-45 after:absolute 
+          after:-bottom-[9px] after:left-[50%] after:-translate-x-[50%]
+          hidden group-hover:block;
   }
 
-  .regionLabel {}
+  .infoSvg {
+    @apply w-[13px] h-[13px] group-hover:hidden;
+  }
+
+  .infoSvgOrange {
+    @apply w-[13px] h-[13px] hidden group-hover:block;
+  }
+
 
   //Textarea
   .details {

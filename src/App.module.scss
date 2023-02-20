@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
+
+
+.formContainer {
+  @apply mx-auto px-4 pt-10 pb-[194px] max-w-[328px] sm:max-w-[664px];
+}
+
+.form {
+  @apply text-black;
+
+  .inputItem_group {
+    @apply grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-2 gap-y-6 sm:gap-4 mb-[25px] sm:mb-[19.5px];
+  }
+
+  //Все inputs + textarea
+  .firstName,
+  .lastName,
+  .company,
+  .email,
+  .details {
+    @apply w-full border-[1px] border-lightGrey focus:border-[1px] focus:border-lightGreyActive;
+  }
+
+  //Все заголовки полужирным
+  .firstNameLabel,
+  .lastNameLabel,
+  .companyLabel,
+  .emailLabel,
+  .regionLabel,
+  .detailsLabel {
+    @apply font-sans font-bold;
+  }
+
+  //Только inputs
+  .firstName,
+  .lastName,
+  .company,
+  .email {
+    @apply rounded-[40px] py-4 pt-2 pb-[9px] max-h-[40px];
+  }
+
+  //Checkbox 
+  .checkboxViaPhone {
+    @apply w-[16px] h-[16px] mr-2;
+  }
+
+  //Label for checkbox (it's inside the label)
+  .viaPhoneLabel {
+    @apply items-center flex items-center;
+  }
+
+  //Group for region radiobuttons
+  .regionGroup {
+    @apply mt-6 sm:mt-[19.5px]
+           ;
+  }
+
+
+  //Helping message
+  .regionsInfo {
+    @apply py-4 px-6 rounded-[8px] shadow-3xl
+    after:block after:content-[''] after:w-4 after:h-4 after:bg-black z-10;
+  }
+
+  .regionLabel {}
+
+  //Textarea
+  .details {
+    @apply rounded-[20px];
+  }
+
+}

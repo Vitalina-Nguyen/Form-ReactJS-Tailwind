@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
 
+body {
+  @apply font-sans;
+}
 
 .formContainer {
   @apply mx-auto px-4 pt-10 pb-[194px] max-w-[328px] sm:max-w-[664px];
@@ -7,6 +10,10 @@
 
 .form {
   @apply text-black bg-white;
+
+  .error {
+    @apply mt-1 text-xs text-lightGreyActive; 
+  }
 
   .inputItem_group {
     @apply grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-2 gap-y-6 sm:gap-4 mb-[25px] sm:mb-[19.5px];
@@ -18,7 +25,8 @@
   .company,
   .email,
   .details {
-    @apply w-full border-[1px] border-lightGrey focus:border-[1px] focus:border-lightGreyActive;
+    @apply w-full px-4 pt-2 pb-[9px] border-[1px] border-lightGrey 
+           focus:border-[1px] focus:border-lightGreyActive outline-none;
   }
 
   //Все заголовки полужирным
@@ -27,8 +35,13 @@
   .companyLabel,
   .emailLabel,
   .regionLabel,
-  .detailsLabel {
+  .detailsLabel,
+  .goalLabel {
     @apply font-sans font-bold;
+  }
+
+  .regionLabel {
+    @apply mr-1
   }
 
   //Только inputs
@@ -36,7 +49,7 @@
   .lastName,
   .company,
   .email {
-    @apply rounded-[40px] py-4 pt-2 pb-[9px] max-h-[40px];
+    @apply rounded-[40px] max-h-[40px];
   }
 
   //Checkbox 
@@ -51,7 +64,7 @@
 
 
 .regionTitle_wrapper {
-  @apply flex;
+  @apply mb-4 sm:mb-2 flex items-center;
 }
   
   //Group for region radiobuttons
@@ -59,31 +72,66 @@
     @apply mt-6 sm:mt-[19.5px];
   }
 
-  // .regionInfoBtn {
-  //   @apply group block ;
-  // }
 
-  //Helping message
-  .regionsInfoMassage {
-    @apply py-4 px-6 rounded-[8px] shadow-3xl relative
-    after:block after:content-[''] after:w-4 after:h-4 after:bg-white 
-          after:rotate-45 after:absolute 
-          after:-bottom-[9px] after:left-[50%] after:-translate-x-[50%]
-          hidden group-hover:block;
+  //Radio buttons groups
+  .radioBtn_wrapper {
+    @apply grid grid-cols-2 grid-rows-2 sm:grid-cols-4 sm:grid-rows-1 gap-[16px];
   }
 
-  .infoSvg {
-    @apply w-[13px] h-[13px] group-hover:hidden;
+  .radioBtn_wrapper label {
+    @apply py-2 px-3 rounded-[8px] shadow-5xl flex items-center
+  }
+  .radioBtn_wrapper label input{
+    @apply mr-2
   }
 
-  .infoSvgOrange {
-    @apply w-[13px] h-[13px] hidden group-hover:block;
+  //Checkbox button's style
+  input[type='checkbox']{
+    @apply appearance-none w-4 h-4 rounded-[4px] border-lightGrey border-[1px] 
   }
 
+  input[type='checkbox']:hover{
+    @apply border-purple;
+  }
+
+  input[type='checkbox']:checked{
+    @apply appearance-none relative w-4 h-4 rounded-[4px] bg-purple border-[1px] border-purple
+           after:w-1 after:h-2 after:absolute after:rotate-45 after:content-[''] after:border-white 
+           after:border-r-[2px] after:border-b-[2px] after:border-t-0 after:border-l-0
+           after:left-[50%] after:-translate-x-[50%] after:top-[50%] after:-translate-y-[50%];
+  }
+
+  //Radio button's style
+  input[type='radio']{
+    @apply w-4 h-4 rounded-full border-lightGrey border-[1px] appearance-none 
+  }
+
+  input[type='radio']:hover{
+    @apply border-purple;
+  }
+
+  input[type='radio']:checked {
+    @apply w-4 h-4 rounded-full border-purple border-[1px] appearance-none relative
+           after:content-[''] after:w-3 after:h-3 after:bg-purple after:rounded-full 
+           after:inline after:absolute after:left-[50%] after:top-[50%] after:-translate-x-[50%] after:-translate-y-[50%]
+  }
+
+  .goalLabel {
+    @apply mb-4 sm:mb-2 mt-6 sm:mt-14 
+  }
 
   //Textarea
   .details {
-    @apply rounded-[20px];
+    @apply h-20 py-4 px-4 rounded-[20px] text-lightGreyActive resize-none;
+  }
+
+  .submitBtn_wrapper {
+    @apply w-full flex justify-center mt-12
+  }
+  .submitBtn {
+    @apply w-[193px] h-10 py-2 px-[50px] rounded-[40px] font-bold text-white
+           bg-gradient-to-r from-pink to-orange
+            
   }
 
 }

@@ -13,12 +13,14 @@
   }
   
   .regionsInfoMassage_wrapper {
-    @apply absolute -top-[140px] left-[50%] -translate-x-[50%] z-10 group-hover:block hidden
+    @apply absolute -top-[140px] left-[50%] -translate-x-[50%] 
+           hidden shadow-3xl rounded-[8px]
+           after:block after:content-[''] after:w-4 after:h-4 after:bg-white after:shadow-4xl 
+           after:rotate-45 after:absolute after:-bottom-[8px] after:left-[50%] after:-translate-x-[50%];
   }
   
   .regionsInfoMassage {
-    @apply w-[296px] py-4 px-6 rounded-[8px] shadow-3xl relative z-10 bg-white text-lightGreyActive
-           after:block after:content-[''] after:w-4 after:h-4 after:bg-white after:shadow-4xl 
-           after:rotate-45 after:absolute after:-bottom-[8px] after:left-[50%] after:-translate-x-[50%];
+    @apply w-[296px] py-4 px-6 rounded-[8px] z-10 relative bg-white text-lightGreyActive 
+           
   }
 }

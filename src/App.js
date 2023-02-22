@@ -4,6 +4,8 @@ import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import InfoBtnRegion from "./components/InfoBtnRegion/InfoBtnRegion.jsx"
 import InfoBtnDetails from "./components/InfoBtnDetails/InfoBtnDetails.jsx"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const SignupSchema = Yup.object().shape({
@@ -29,6 +31,9 @@ const SignupSchema = Yup.object().shape({
 
 function App() {
 
+
+  const notify = () => toast("Success!");
+
   return (
     <div>
       <div className={style.formContainer}>
@@ -44,10 +49,12 @@ function App() {
             details: "",
           }}
           validationSchema={SignupSchema}
-          onSubmit={async (values) => {
-            await new Promise((r) => setTimeout(r, 500));
-            alert(JSON.stringify(values, null, 2));
-          }}
+          onSubmit={
+            notify
+            // async (values) => {
+            // await new Promise((r) => setTimeout(r, 500));
+            // alert(JSON.stringify(values, null, 2));}
+        }
         >
           {({ errors, touched }) => (
             <Form className={style.form}>
@@ -155,6 +162,7 @@ function App() {
             </Form>
           )}
         </Formik>
+        <ToastContainer />
       </div>
     </div>
   );

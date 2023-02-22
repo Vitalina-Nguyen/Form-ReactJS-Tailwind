@@ -1,5 +1,5 @@
-.goalInfoBtn{
-  @apply relative inline ml-1 ;
+.detailInfoBtn{
+  @apply inline ml-1 sm:relative;
 }
 
 // .detailsLabel {
@@ -18,15 +18,17 @@
   @apply w-[13px] h-[13px] inline;
 }
 
-.goalInfoMassage_wrapper {
-  @apply w-[296px] absolute -top-[112px] left-[50%] -translate-x-[50%] z-10 group-hover:block font-normal
-}
-
-.goalInfoMassage {
-  @apply py-4 pl-6 pr-4 flex items-start rounded-[8px] shadow-3xl relative z-10 bg-white text-lightGreyActive
-         leading-[23px]
+.detailInfoMassage_wrapper {
+  @apply w-[296px] absolute -top-[110px] left-[50%] -translate-x-[50%] hidden
+         z-10 group-hover:block font-normal shadow-3xl rounded-[8px]
          after:block after:content-[''] after:w-4 after:h-4 after:bg-white after:shadow-4xl 
          after:rotate-45 after:absolute after:-bottom-[8px] after:left-[50%] after:-translate-x-[50%];
+}
+
+.detailInfoMassage {
+  @apply py-4 pl-6 pr-4 flex items-start rounded-[8px] relative z-10 bg-white text-lightGreyActive
+         leading-[23px]
+
 }
 
 .closeIcon {
